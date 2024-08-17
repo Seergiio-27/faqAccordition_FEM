@@ -1,0 +1,149 @@
+
+/*
+    Font imports
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*
+    CSS resets
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/*
+    Root styles
+*/
+
+:root {
+
+    /* colors */
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-pink: hsl(275, 100%, 97%);
+    --clr-grayish-purple: hsl(292, 16%, 49%);
+    --clr-dark-purple: hsl(292, 42%, 14%) ;
+
+    /* typography */
+
+    --fs-body: 0.875rem;
+    --fs-btn: 1.1rem;
+
+    --fw-400: 400;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    --ff-main: "Work Sans", sans-serif;
+}
+
+/*
+    General styles
+*/
+
+body {
+    background-color: var(--clr-light-pink);
+    background-image: url(assets/images/background-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    font-family: var(--ff-main);
+
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--clr-white);
+    margin: 1.5rem;
+    padding: 1rem;
+    border-radius: 20px;
+
+    box-shadow: 0px 5px 25px -25px black;
+
+    max-width: 550px;
+}
+
+.faq-headline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.faq-headline h1{
+    font-weight: var(--fw-700);
+    font-size: 2.5rem;
+}
+
+.accordition-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    font-size: var(--fs-btn);
+    font-weight: var(--fw-600);
+
+    gap: 1rem;
+    padding-block: 1rem;
+}
+
+.accordition-container .accordition-item:not(:last-child) {
+    border-bottom: 1px solid lightgray;
+}
+
+
+.accordition-description {
+    color: gray;
+}
+
+.accordition-item .icons img {
+    min-width: 35px;
+}
+
+.accordition-item .minus-icon {
+    display: none;
+}
+
+.accordition-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease;
+}
+
+.accordition-description p {
+    padding-block: 1.5rem;
+
+}
+
+.accordition-description.show {
+    max-height: 200px;
+}
+
+@media screen and (min-width:650px) {
+    body {
+       background-image: url(assets/images/background-pattern-desktop.svg);
+       background-repeat: no-repeat;
+       background-size: contain;
+    }
+
+}
